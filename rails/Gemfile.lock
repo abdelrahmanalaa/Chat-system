@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     arel (7.1.4)
     builder (3.2.3)
+    byebug (11.0.1)
     concurrent-ruby (1.1.5)
     connection_pool (2.2.2)
     crass (1.0.4)
@@ -75,8 +76,11 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     multipart-post (2.1.1)
+    mysql2 (0.5.2)
     mysql2 (0.5.2-x64-mingw32)
     nio4r (2.4.0)
+    nokogiri (1.10.3)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.3-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     puma (3.12.1)
@@ -135,6 +139,7 @@ GEM
     websocket-extensions (0.1.4)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
