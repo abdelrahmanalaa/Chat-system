@@ -35,20 +35,20 @@ Only docker and docker-compose should be installed on your machine.
  
  
   - Create application
+
+      url: localhost:3000/applications
+      method: POST
+      content-type: application/json
+      ex: body: {
+          "name": "testing" 
+      }
     
-    url: localhost:3000/applications
-    method: POST
-    content-type: application/json
-    ex: body: {
-        "name": "testing" 
-    }
-    
-    - View application
+  - View application
       
       url: localhost:3000/applications/:token
       method: GET
       
-    - Update application  
+  - Update application  
         url: localhost:3000/applications/:token
         method: PUT
         content-type: application/json
@@ -56,12 +56,33 @@ Only docker and docker-compose should be installed on your machine.
             "name": "testing" 
         }
         
-    - Create chat    
+  - Create chat    
         url: localhost:3001/applications/:token/chats
         method: POST
      
-     - View chat  
+   - View chat  
         url: localhost:3000/applications/:token/chats/:chat_number
         method: get
+   
+   - Create message
+        url: localhost:3001/applications/:token/chats/:chat_number/messages
+        method: POST
+   
+   
+  - Search messages in chat
 
+      url: localhost:3000/applications/:token/chats/:chat_number/messages/search
+      method: get
+      Query string: q = word to search for
       
+   - View message  
+        url: localhost:3000/applications/:token/chats/:chat_number/messages/:message_number
+        method: get   
+              
+   - Update message 
+        url: localhost:3000/applications/:token/chats/:chat_number/messages/:message_number
+        method: PUT
+        content-type: application/json
+        ex: body: {
+            "body": "testing" 
+        }   
