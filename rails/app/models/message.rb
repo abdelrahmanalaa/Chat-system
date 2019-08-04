@@ -37,5 +37,5 @@ class Message < ApplicationRecord
  end
 
 end
-
-Message.import force: true
+Message.__elasticsearch__.create_index!
+Message.import
