@@ -14,7 +14,7 @@ Only docker and docker-compose should be installed on your machine.
   - 3000 (rails server)
   - 3001 (golang server)
   - 9002 (elasticsearch)
-  - 7364 (mysaql)
+  - 7364 (mysql)
   - 6379 (redis)
 
   
@@ -102,7 +102,7 @@ Only docker and docker-compose should be installed on your machine.
    
   - Search messages in chat
 
-        url: localhost:3000/applications/:token/chats/:chat_number/messages/search/q=word
+        url: localhost:3000/applications/:token/chats/:chat_number/messages/search?q=word
 
         method: get
 
