@@ -25,6 +25,7 @@ class ApplicationsController < ApplicationController
         render json: {status: "SUCCESS", data: {
             token: application["token"],
             name: application["name"],
+            chat_count: application["chats_count"],
         }}, status: :ok
     end
 
