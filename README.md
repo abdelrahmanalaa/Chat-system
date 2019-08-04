@@ -21,11 +21,21 @@ Only docker and docker-compose should be installed on your machine.
 # Installing
 
  - Clone the repo
- - open the terminal and cd the project directory
- - Run docker-compose up
+ - open the terminal and cd to the project directory
+ - Run 
+ 
+        docker-compose up
+        
  - wait until all containers are up
- - when mysql echo to the terminal that it's ready to accept connections Open new terminal and run docker-compose run rails rake db:create
- then docker-compose run rails rake db:migrate to create the database and the migrations
+ 
+ - when mysql echo to the terminal that it's ready to accept connections Open new terminal and run 
+ 
+    
+         docker-compose run rails rake db:create
+         docker-compose run rails rake db:migrate
+     
+ to create the database and the migrations
+ 
  - now the api is ready to be consumed
  
  
