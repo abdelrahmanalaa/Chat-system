@@ -22,7 +22,7 @@ Only docker and docker-compose should be installed on your machine.
 
   - Elasticsearch sometimes throw max virtual memory error this did the trick for me
         
-        sysctl -w vm.max_map_count=262144
+        sudo sysctl -w vm.max_map_count=262144
 
  - Clone the repo
  - open the terminal and cd to the project directory
