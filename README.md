@@ -83,7 +83,7 @@ Only docker and docker-compose should be installed on your machine.
         
           method: POST
         
-          content-type: json
+          content-type: application/json
         
           body: {
               "body": "hello there!"
