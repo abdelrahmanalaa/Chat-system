@@ -25,7 +25,13 @@ Only docker and docker-compose should be installed on your machine.
  - Run 
  
         docker-compose up
+  
+  
+      -- Elasticsearch sometimes throw max virtual memory error this did the trick for me
         
+          sysctl -w vm.max_map_count=262144
+  
+  
  - wait until all containers are up
  
  - when mysql echo to the terminal that it's ready to accept connections Open new terminal and run 
@@ -128,8 +134,5 @@ Only docker and docker-compose should be installed on your machine.
           }
 
         
-        Elasticsearch sometimes throw max virtual memory error this did the trick for me
-        
-          sysctl -w vm.max_map_count=262144
           
           
