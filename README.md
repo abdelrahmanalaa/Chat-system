@@ -35,20 +35,23 @@ Only docker and docker-compose should be installed on your machine.
  
  
   - Create application
-
-      url: localhost:3000/applications
-      method: POST
-      content-type: application/json
-      ex: body: {
-          "name": "testing" 
-      }
+  
+        url: localhost:3000/applications
+        method: POST
+        content-type: application/json
+        ex: body: {
+            "name": "testing" 
+        }
     
   - View application
+  
       
-      url: localhost:3000/applications/:token
-      method: GET
+        url: localhost:3000/applications/:token   
+        
+        method: GET
       
   - Update application  
+  
         url: localhost:3000/applications/:token
         
         method: PUT
@@ -59,56 +62,58 @@ Only docker and docker-compose should be installed on your machine.
         }
         
   - Create chat    
-        url: localhost:3001/applications/:token/chats
+          
+          url: localhost:3001/applications/:token/chats
         
-        method: POST
+          method: POST
      
    - View chat  
-        url: localhost:3000/applications/:token/chats/:chat_number
+           
+           url: localhost:3000/applications/:token/chats/:chat_number
         
-        method: GET
+           method: GET
         
    - Create message
-        url: localhost:3001/applications/:token/chats/:chat_number/messages
         
-        method: POST
         
-        content-type: json
+          url: localhost:3001/applications/:token/chats/:chat_number/messages
         
-        body: {
-            "body": "hello there!"
-        }
+          method: POST
+        
+          content-type: json
+        
+          body: {
+              "body": "hello there!"
+          }
    
    
   - Search messages in chat
 
-      url: localhost:3000/applications/:token/chats/:chat_number/messages/search/q=word
-      
-      method: get
-      
-      Query string: q = word to search for
+        url: localhost:3000/applications/:token/chats/:chat_number/messages/search/q=word
+
+        method: get
+
+        Query string: q = word to search for
       
    - View message  
    
-        url: localhost:3000/applications/:token/chats/:chat_number/messages/:message_number
-        
-        method: get   
+          url: localhost:3000/applications/:token/chats/:chat_number/messages/:message_number
+
+          method: get   
               
    - Update message 
    
    
-        url: localhost:3000/applications/:token/chats/:chat_number/messages/:message_number
-        
-        method: PUT
-        
-        content-type: application/json
-        
-        body: {
-            "body": "testing" 
-        }
-        
-        
-        
+          url: localhost:3000/applications/:token/chats/:chat_number/messages/:message_number
+
+          method: PUT
+
+          content-type: application/json
+
+          body: {
+              "body": "testing" 
+          }
+
         
         Elasticsearch sometimes throw max virtual memory error this did the trick for me
         
