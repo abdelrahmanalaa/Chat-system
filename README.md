@@ -50,7 +50,9 @@ Only docker and docker-compose should be installed on your machine.
       
   - Update application  
         url: localhost:3000/applications/:token
+        
         method: PUT
+        
         content-type: application/json
         ex: body: {
             "name": "testing" 
@@ -58,31 +60,58 @@ Only docker and docker-compose should be installed on your machine.
         
   - Create chat    
         url: localhost:3001/applications/:token/chats
+        
         method: POST
      
    - View chat  
         url: localhost:3000/applications/:token/chats/:chat_number
-        method: get
-   
+        
+        method: GET
+        
    - Create message
         url: localhost:3001/applications/:token/chats/:chat_number/messages
+        
         method: POST
+        
+        content-type: json
+        
+        body: {
+            "body": "hello there!"
+        }
    
    
   - Search messages in chat
 
-      url: localhost:3000/applications/:token/chats/:chat_number/messages/search
+      url: localhost:3000/applications/:token/chats/:chat_number/messages/search/q=word
+      
       method: get
+      
       Query string: q = word to search for
       
    - View message  
+   
         url: localhost:3000/applications/:token/chats/:chat_number/messages/:message_number
+        
         method: get   
               
    - Update message 
+   
+   
         url: localhost:3000/applications/:token/chats/:chat_number/messages/:message_number
+        
         method: PUT
+        
         content-type: application/json
-        ex: body: {
+        
+        body: {
             "body": "testing" 
-        }   
+        }
+        
+        
+        
+        
+        Elasticsearch sometimes throw max virtual memory error
+        
+          Run sysctl -w vm.max_map_count=262144
+          
+          this did the trick for me
