@@ -29,11 +29,11 @@ services:
       - ./rails:/app  
     environment:
       REDIS_CONNECTION_STRING: redis://redis:6379/0
-      DATABASE_URL: db
+      DATABASE_HOST: db
       DATABASE_PORT: 3306
       DATABASE_USERNAME: root
       DATABASE_PASSWORD: password
-      ELASTICSEARCH_URL: elasticsearch:9200
+      ELASTICSEARCH_HOST: elasticsearch:9200
 
   sidekiq:
     build: ./rails/.
@@ -48,11 +48,11 @@ services:
       - elasticsearch
     environment:
       REDIS_CONNECTION_STRING: redis://redis:6379/0
-      DATABASE_URL: db
+      DATABASE_HOST: db
       DATABASE_PORT: 3306
       DATABASE_USERNAME: root
       DATABASE_PASSWORD: password
-
+      ELASTICSEARCH_HOST: elasticsearch:9200
   go:
     depends_on:
       - redis
