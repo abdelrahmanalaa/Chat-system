@@ -37,7 +37,9 @@ Only docker and docker-compose should be installed on your machine.
   - Create application
   
         url: localhost:3000/applications
+        
         method: POST
+        
         content-type: application/json
         ex: body: {
             "name": "testing" 
@@ -57,6 +59,7 @@ Only docker and docker-compose should be installed on your machine.
         method: PUT
         
         content-type: application/json
+        
         ex: body: {
             "name": "testing" 
         }
@@ -93,7 +96,7 @@ Only docker and docker-compose should be installed on your machine.
 
         method: get
 
-        Query string: q = word to search for
+        Query string: q: word to search for
       
    - View message  
    
