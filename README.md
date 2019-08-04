@@ -102,7 +102,7 @@ Only docker and docker-compose should be installed on your machine.
    
   - Search messages in chat
 
-        url: localhost:3000/applications/:token/chats/:chat_number/messages/search?q=word
+        url: localhost:3000/applications/:token/chats/:chat_number/messages/search/?q=word
 
         method: get
 
