@@ -38,4 +38,4 @@ class Message < ApplicationRecord
 
 end
 
-Message.import()
+Message.import force: true

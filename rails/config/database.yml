@@ -9,23 +9,15 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
 #
-# default: &default
-#   adapter: mysql2
-#   encoding: utf8
-#   pool: 5
-#   username: root
-#   password: root
-#   host: localhost
-
 default: &default
-adapter: mysql2
-encoding: utf8
-pool: 5
-username: <%= ENV['DATABASE_USERNAME'] %>
-password: <%= ENV['DATABASE_PASSWORD'] %>
-host: <%= ENV['DATABASE_URL'] %>
-port: <%= ENV['DATABASE_PORT'] %>
-
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_URL'] %>
+  port: <%= ENV['DATABASE_PORT'] %>
+  
 development:
   <<: *default
   database: instabugTask_development
@@ -59,5 +51,5 @@ test:
 production:
   <<: *default
   database: instabugTask_production
-  username:  <%= ENV['DATABASE_USERNAME'] %>
+  username: instabugTask
   password: <%= ENV['DATABASE_PASSWORD'] %>

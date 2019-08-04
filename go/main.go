@@ -3,32 +3,24 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-redis/redis"
 	"github.com/jrallison/go-workers"
-	"github.com/spf13/viper"
 )
-
-func init() {
-	viper.SetConfigFile(`config.json`)
-	err := viper.ReadInConfig()
-	if err != nil {
-		panic(err)
-	}
-}
 
 //token_chats
 //token_(chat_number)
 
 func main() {
 
-	redisConnectionString := viper.GetString(`REDIS_CONNECTION_STRING`)
+	redisConnectionString := os.Getenv("REDIS_CONNECTION_STRING")
 
 	client := redis.NewClient(&redis.Options{
 		Addr: redisConnectionString,
-		DB:   0, // use default DB
+		DB:   0,
 	})
 
 	workers.Configure(map[string]string{
@@ -102,6 +94,6 @@ func main() {
 		return
 	})
 
-	httpServerPort := viper.GetString(`HTTP_SERVER_PORT`)
+	httpServerPort := os.Getenv("HTTP_SERVER_PORT")
 	router.Run(fmt.Sprintf(":%s", httpServerPort))
 }
