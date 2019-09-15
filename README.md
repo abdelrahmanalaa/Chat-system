@@ -1,6 +1,4 @@
-# Instabug challenge
-
-  Chat application
+# Chat application
 
 # Getting Started
 
